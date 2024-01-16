@@ -1,0 +1,7 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.title, .subtitle, .next-meetup, .keep-updated, .about-us {
+    color: hotpink;
+}
