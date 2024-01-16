@@ -2,6 +2,18 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.title, .subtitle, .next-meetup, .keep-updated, .about-us {
+.container {
+    max-width: 800px; /* Adjust the width as needed */
+}
+
+.title, .subtitle, .about-us {
     color: hotpink;
+}
+
+.bg-hotpink {
+    background-color: hotpink;
+}
+
+.text-white {
+    color: white;
 }
