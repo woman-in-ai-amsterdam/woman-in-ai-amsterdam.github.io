@@ -2,11 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.container {
-    max-width: 800px; /* Adjust the width as needed */
-}
-
-.title, .subtitle, .about-us {
+.title, .subtitle {
     color: hotpink;
 }
 
@@ -16,4 +12,21 @@ body {
 
 .text-white {
     color: white;
+}
+
+.btn-hotpink {
+    color: hotpink;
+    background-color: white;
+    border-color: hotpink;
+}
+
+.btn-hotpink:hover {
+    color: white;
+    background-color: hotpink;
+    border-color: white;
+}
+
+/* Adjust the container max-width if needed */
+.container {
+    max-width: 800px;
 }
