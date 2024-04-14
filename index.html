@@ -1,43 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Women and Gender Minorities in AI Meetup</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
     <canvas id="animated-background"></canvas>
 
     <div class="content">
-        <div class="next-meetup bg-hotpink text-white d-flex justify-content-between align-items-center px-4 py-2">
-            <p class="mb-0">Next meetup: <strong>DATE</strong></p>
-            <button type="button" class="btn btn-hotpink">Sign up now</button>
+      <div
+        class="next-meetup bg-hotpink text-white d-flex justify-content-between align-items-center px-4 py-2"
+      >
+        <p class="mb-0">Next meetup: <strong>DATE</strong></p>
+        <button type="button" class="btn btn-hotpink">Sign up now</button>
+      </div>
+
+      <div class="container py-5">
+        <h1 class="title mb-3">Woman, and gender minorities, in AI</h1>
+        <h2 class="subtitle mb-4">Meetup Amsterdam</h2>
+
+        <div class="about-us mb-5">
+          <!-- <h2 class="mb-3">About us</h2> -->
+          <p>
+            Join us at the Woman and Gender Minorities in AI Meetup in
+            Amsterdam, a vibrant gathering organized by individuals at the
+            University of Amsterdam (UvA).
+          </p>
+
+          <p>
+            Our weekly meet-ups offer a dedicated space to delve into AI topics,
+            fostering a supportive and inclusive environment. We're committed to
+            creating a safe space for learning, discussion, and networking,
+            welcoming both community members and allies alike.
+          </p>
+
+          <p>
+            This meet-up is organized by
+            <a href="http://mariaheuss.com">Maria Heuss</a>.
+          </p>
+
+          <p>Don't miss this opportunity to connect and grow with us!</p>
         </div>
 
-        <div class="container py-5">
-            <h1 class="title mb-3">Woman, and gender minorities, in AI</h1>
-            <h2 class="subtitle mb-4">Meetup Amsterdam</h2>
+        <div class="keep-updated mb-5">
+          <h2>Newsletter Sign-up</h2>
+          <p class="mb-3">
+            Stay informed about our upcoming meetups and events:
+          </p>
 
-            <div class="about-us mb-5">
-                <h2 class="mb-3">About us</h2>
-                <p>Lorum Ipsum ...</p>
-            </div>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSd4Hi4r1pUNbRxzwVJ_JWa1apS925vEZQuuxm1iGjx3USM0iw/viewform?embedded=true"
+            width="640"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            >Loading…</iframe
+          >
 
-            <div class="keep-updated mb-5">
-                <p class="mb-3">Stay informed about our upcoming meetups and events:</p>
-                <form class="d-flex">
-                    <input type="email" class="form-control me-2" id="email" placeholder="Enter your email">
-                    <button type="submit" class="btn btn-hotpink">Subscribe</button>
-                </form>
-            </div>
+          <!-- <form class="d-flex">
+            <input
+              type="email"
+              class="form-control me-2"
+              id="email"
+              placeholder="Enter your email"
+            />
+            <button type="submit" class="btn btn-hotpink">Subscribe</button>
+          </form> -->
         </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="background.js"></script>
-</body>
+  </body>
 </html>

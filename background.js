@@ -1,8 +1,9 @@
 const canvas = document.getElementById('animated-background');
 const ctx = canvas.getContext('2d');
 const points = [];
-const density = 0.9; // per r x r
-const r = 20; // radius for line connections
+const density = 0.5; // per r x r
+const r = 50; // radius for line connections
+const speed = 10; // px / s
 
 const gridSize = r;
 const grid = {};
@@ -35,9 +36,15 @@ function updateGrid() {
     });
 }
 
+var lastTime = Date.now();
 function animate() {
     // Set the canvas size to fill the window
     resize();
+
+    const time = Date.now();
+    let dt = Math.min(lastTime - time, 1000) / 1000;
+
+    lastTime = time;
 
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -45,8 +52,8 @@ function animate() {
 
     points.forEach(point => {
         // Move point
-        point.x += point.vx;
-        point.y += point.vy;
+        point.x += point.vx * dt;
+        point.y += point.vy * dt;
 
         // Wrap around the edges
         if (point.x > canvas.width) point.x = 0;
@@ -56,8 +63,24 @@ function animate() {
     });
 
     
-    ctx.strokeStyle = 'lightgray';
-    ctx.beginPath();
+    // ctx.strokeStyle = '#ddd';
+    // ctx.beginPath();
+    // points.forEach(point => {
+    //     // Draw lines to nearby points
+    //     const key = getGridKey(point.x, point.y);
+    //     const neighbors = getNearbyPoints(key);
+    //     neighbors.forEach(nearPoint => {
+    //         const dx = point.x - nearPoint.x;
+    //         const dy = point.y - nearPoint.y;
+    //         const distance = Math.sqrt(dx * dx + dy * dy);
+    //         if (distance < r) {
+    //             ctx.moveTo(point.x, point.y);
+    //             ctx.lineTo(nearPoint.x, nearPoint.y);
+    //         }
+    //     });
+    // });
+    // ctx.stroke();
+    
     points.forEach(point => {
         // Draw lines to nearby points
         const key = getGridKey(point.x, point.y);
@@ -66,14 +89,20 @@ function animate() {
             const dx = point.x - nearPoint.x;
             const dy = point.y - nearPoint.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
+
             if (distance < r) {
+                ctx.strokeStyle = `rgba(180,180,180,${1 - distance/r})`;
+
+                // ctx.strokeStyle = '#ddd';
+                ctx.beginPath();
                 ctx.moveTo(point.x, point.y);
                 ctx.lineTo(nearPoint.x, nearPoint.y);
+                ctx.stroke();
             }
+
         });
     });
-    ctx.stroke();
-    
+
     ctx.fillStyle = 'hotpink';
     ctx.beginPath();
     points.forEach(point => {
@@ -114,8 +143,8 @@ function resize(){
         const point = {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 2,
-            vy: (Math.random() - 0.5) * 2
+            vx: (Math.random() - 0.5) * 2 * speed,
+            vy: (Math.random() - 0.5) * 2 * speed
         };
         points.push(point);
     }

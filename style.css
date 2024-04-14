@@ -1,10 +1,23 @@
 body {
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans'; */
+    
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #555;
 }
 
 .title, .subtitle {
     color: hotpink;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: hotpink;
+}
+
 
 .bg-hotpink {
     background-color: hotpink;
@@ -26,9 +39,28 @@ body {
     border-color: white;
 }
 
+.content {
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+
+    font-size: 15pt;
+    font-weight: 300;
+}
+
 /* Adjust the container max-width if needed */
 .container {
-    max-width: 800px;
+    max-width: 960px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background: white;
+    /* backdrop-filter: blur(5px); */
+    flex-grow: 1;
+    box-shadow: 
+        -10px 0 15px -5px rgba(0,0,0,0.1), 
+        10px 0 15px -5px rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0,0,0,0.15);
+    border-right: 1px solid rgba(0,0,0,0.15);
 }
 
 
